@@ -11,8 +11,8 @@
 10) By.CLASS_NAME, "input__error" - сообщение об ошибке
 11) By.CLASS_NAME, "AppHeader_header__logo__2D0X2" - логотип
 12) By.LINK_TEXT, "Конструктор" - кнопка "Конструктор"
-13)
-14)
-15)
+13) By.XPATH, "//*[@id='root']/div/main/section[1]/div[1]/div[2]" - Соусы
+14) By.XPATH, "//*[@id='root']/div/main/section[1]/div[1]/div[3]" - Начинки
+15) By.XPATH, "//*[@id='root']/div/main/section[1]/div[1]/div[1]" - Булки
 
 

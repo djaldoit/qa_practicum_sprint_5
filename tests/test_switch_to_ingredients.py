@@ -9,12 +9,12 @@ class TestIngredients:
         driver.find_element(*Locators.BUTTON_SOUSES).click()
         driver.find_element(*Locators.BUTTON_BREADS).click()
 
-        section_fillings = WebDriverWait(driver, 3).until(
-            expected_conditions.visibility_of_element_located(Locators.FILLINGS_TXT)
+        section_breads = WebDriverWait(driver, 3).until(
+            expected_conditions.visibility_of_element_located(Locators.BREADS_TXT)
         )
 
         # Проверка, что перешли в меню "Булки"
-        assert section_fillings.is_displayed()
+        assert section_breads.is_displayed()
 
     def test_sauces(self, driver):
         driver.find_element(*Locators.BUTTON_SOUSES).click()

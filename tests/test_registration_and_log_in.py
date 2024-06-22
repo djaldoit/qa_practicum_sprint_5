@@ -1,7 +1,7 @@
 from selenium.webdriver.support import expected_conditions
 from selenium.webdriver.support.wait import WebDriverWait
 
-from data import AccountData
+from data import AccountData, UserDataGenerator
 from locators import Locators
 from conftest import driver
 
@@ -11,9 +11,9 @@ class TestRegistrationAndLogaut:
     def test_successful_registration(self, driver):
         driver.find_element(*Locators.LOG_IN_BUTTON).click()
         driver.find_element(*Locators.REGISTER_BUTTON).click()
-        driver.find_element(*Locators.FIELD_NAME).send_keys(AccountData.NAME)
-        driver.find_element(*Locators.FIELD_EMAIL).send_keys(AccountData.EMAIL)
-        driver.find_element(*Locators.FIELD_PASSWORD).send_keys(AccountData.PASSWORD)
+        driver.find_element(*Locators.FIELD_NAME).send_keys(UserDataGenerator.user_data_generator()['name'])
+        driver.find_element(*Locators.FIELD_EMAIL).send_keys(UserDataGenerator.user_data_generator()['email'])
+        driver.find_element(*Locators.FIELD_PASSWORD).send_keys(UserDataGenerator.user_data_generator()['password'])
         driver.find_element(*Locators.REGISTRATION_BUTTON).click()
 
         logo_in = WebDriverWait(driver, 3).until(
